@@ -1,13 +1,27 @@
 import React ,{Component} from 'react';
-import {View,ImageBackground,Image,Text} from 'react-native';
-import {Card,CardItems,Input,Button,style} from './common';
+import {View,ImageBackground,Image,Text,TouchableOpacity} from 'react-native';
+import {CardItems,Input,Button,style} from './common';
+import { connect } from 'react-redux';
+import {GetUserInput,Loginfun} from '../actions';
 import backgroundImage from '../assets/bg.png';
 import Logo from '../assets/elaraby_live_icon_big.png';
+
+export const MapState=state=>{
+   
+   return{ sapDataObj:{
+        sap: this.state.Authen.SapData.sapNum,
+        password:this.state.Authen.SapData.password
+    }};
+   
+}
+OnSubmitButton()
+{
+   const userInput_SapData =this.GetUserInput(this.MapState.sapDataObj)
+     this.props.LoginFun(userInput_SapData);
+    
+}
  class Login extends Component{
-   state={
-        password:'',
-        email:''
-    };
+  
     
     render(){
         return(
@@ -20,26 +34,28 @@ import Logo from '../assets/elaraby_live_icon_big.png';
          </View>
             <View style={style.InputeCont}>
             <View style={style.InputView}>
-             <Input value={this.state.email}
-                 onChangeText={email=>(this.setState(email))}
+             <Input value={MapState.sapDataObj.sap}
+                 onChangeText={MapState.sapDataObj.sap=>this.setState({MapState.sapDataObj.sap})}
                  type="Sap"
                  >
               </Input>
            </View>
            <View style={style.InputView}>
-           <Input value={this.state.password}
-                 onChangeText={password=>(this.setState(password))}
+           <Input value={MapState.sapDataObj.password}
+                 onChangeText={MapState.sapDataObj.sap=>this.setState({MapState.sapDataObj.password})}
                  type="password"
                  >
            </Input>
            </View>
            </View>
            <View style={style.ButtonCont}>
-             <Button title={"تسجيل دخول"} onPress={()=>{}} /> 
+             <Button title={"تسجيل دخول"} onPress={()=>{this.OnSubmitButton.bind(this)}} /> 
             </View>
     
         <View style={style.ForgetPasswordCont}>
+        <TouchableOpacity>
             <Text style={style.ForgetPasswordText}>نسيت كلمة المرور؟</Text>
+            </TouchableOpacity>
          </View>
        </ImageBackground>
         ); 
@@ -48,4 +64,4 @@ import Logo from '../assets/elaraby_live_icon_big.png';
  
 
 
-export default Login; 
+export default  connect(MapState,{GetUserInput,Loginfun}) (Loginform)  
