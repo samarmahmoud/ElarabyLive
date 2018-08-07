@@ -9,13 +9,13 @@ const Input =(props)=>{
     switch(props.type){
         case "password":{
            secureInpute=true;
-           placeholder="Password";
+           placeholder="كلمة المرور";
             
         }
         break;
-        case "Email":{
-          keyboardType='email-address';
-          placeholder="username@gmail"
+        case "Sap":{
+          keyboardType='numeric';
+          placeholder="SAP رقم" 
         }
         break;
         default :{
@@ -28,18 +28,18 @@ const Input =(props)=>{
     
   }
     return(
-   <View style={style.container}>
+   
     <TextInput
             value={props.value}
             onChangeText={props.onChangeText}
             placeholder={placeholder}
-            placeholderTextColor="#ddd" 
+            placeholderTextColor="#ffffff" 
             underlineColorAndroid='transparent'
             secureTextEntry={secureInpute}
             keyboardType={keyboardType}
             style={style.TextStyle} >
           </TextInput>
-   </View>
+  
  );
 };
 

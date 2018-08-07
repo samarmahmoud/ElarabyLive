@@ -8,17 +8,13 @@ export default class SplashScreen extends React.Component {
     render() {
         return (
             <View style={style.SplashParent}>
-
                 <View style={style.Splashcontainer}>
-                    <View style={style.Splash_imageContinar}>
-    
-                        <Image style={style.Splash_imageLogo}
-                            source={Logo} />
-                    </View>
-                </View>
-                <View >
-                    <Image style={style.Splash_Spinner}
-                        source={Spinner} />
+                    <Image style={style.Splash_imageLogo}
+                           source={Logo} />
+                </View> 
+                <View style={style.Splashcontainer} >   
+                     <Image style={style.Splash_Spinner}
+                       source={Spinner} />
                 </View>
             </View>
         );
