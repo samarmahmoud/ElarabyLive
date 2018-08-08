@@ -1,19 +1,20 @@
-import GetUserInput from '../actions';
+import GETUSERINPUTE from '../actions';
 
 const Initial_State={
-   SapData={
+   SapData:{
        sapNum:'',
        password:''
    }
-}
+};
 
-export default =(state=Initial_State,action)=>{
+export default (state=Initial_State,action)=>{
+    console.log(action.type);
     switch(action.type){
-        case GetUserInput:
-            return action.payload;
+        case GETUSERINPUTE:
+            return {...state,SapData:action.payload};
         break;
         default:
         return state;
     }
       
-}
+} 

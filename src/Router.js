@@ -2,7 +2,7 @@ import React from 'react';
 import {Router,Scene} from 'react-native-router-flux';
 import Splash from './components/Splash';
 import Login from './components/Login';
-
+import Home from './components/Home';
 const Router_Component=()=>{
     return(
         <Router>
@@ -12,6 +12,8 @@ const Router_Component=()=>{
               </Scene>
              <Scene key="auth">
                <Scene key="Login" component={Login} hideNavBar/>
+               <Scene key="Home" component={Home} hideNavBar/>
+               
                
              </Scene>
             </Scene>
