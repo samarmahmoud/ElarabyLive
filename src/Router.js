@@ -12,9 +12,10 @@ const Router_Component=()=>{
               </Scene>
              <Scene key="auth">
                <Scene key="Login" component={Login} hideNavBar/>
-               <Scene key="Home" component={Home} hideNavBar/>
                
-               
+             </Scene>
+             <Scene key="NewFeed">
+             <Scene key="Home" component={Home} hideNavBar/>
              </Scene>
             </Scene>
         </Router>
