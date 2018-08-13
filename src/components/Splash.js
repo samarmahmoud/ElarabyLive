@@ -6,7 +6,10 @@ import Logo from '../assets/elaraby_live_icon_big.png';
 import Spinner from '../assets/spinner_circle.png'
 
 export default class SplashScreen extends React.Component {
-   
+   constructor(props){
+     super(props);
+       let interval=5000;
+   }
     componentWillMount(){
         setTimeout(this.onTimeChange.bind(this) ,3000);
     }
