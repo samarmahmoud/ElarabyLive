@@ -12,7 +12,7 @@ export const GetUserInput=(sapData)=>{
 export const Loginfun=(sapData)=>{
     //console.log(sapData);
     return (
-        //  fetch('http://192.168.201.1:2695/api/Home/LoginUserFromSap/0',{
+        //  fetch('http://192.168.202.1:2695/api/Home/LoginUserFromSap/0',{
         //  method:'POST',
         //  headers: { 
         //      'Accept': 'application/json',

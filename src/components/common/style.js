@@ -1,15 +1,16 @@
 
 const style = {
     headerStyle: {
-        backgroundColor: '#4a73ab',
+        backgroundColor: '#105291',
         paddingTop: 20,
-        height: 70,
-        justifyContent: 'center',
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 5 },
-        shadowOpacity: 0.3,
-        elevation: 3
+        height: 80,
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end',
+        shadowColor: '#3d000000',
+        shadowOffset: { width: 4, height: 0 },
+        shadowOpacity: 0.5,
+        elevation: 3,
+      
     },
     headerTextStyle: {
         fontSize: 20,

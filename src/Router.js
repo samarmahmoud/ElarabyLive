@@ -1,37 +1,24 @@
 import React from 'react';
 import {Image,Text} from 'react-native';
 import {Router,Scene,Tabs} from 'react-native-router-flux';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Splash from './components/Splash';
 import Login from './components/Login';
 import Home from './components/Home';
-import profileIcon from './assets/profile.png'; 
-import main from './assets/main.png';
-import gallery from './assets/gallery.png';
-import HQ from './assets/hq.png';
-import Twasol from './assets/tawasol.png';
+import profile from './assets/profile.png'; 
+import profile_selected from './assets/profile_selected.png'; 
+import tawasol from './assets/tawasol.png'; 
+import tawasol_selectd from './assets/tawasol_selected.png'; 
+import main from './assets/main.png'; 
+import main_selected from './assets/main_selected.png'; 
+import hq from './assets/hq.png'; 
+import hq_selected from './assets/hq_selected.png'; 
+import gallery from './assets/gallery.png'; 
+import gallery_selected from './assets/gallery_selected.png'; 
 
 const IconComponent=(props)=>{
-
-   switch(props.name){
-       case "profile":
-       return (<Image source={profileIcon} style={{width:22, height:23}}/>)
-       break;
-       case "main":
-       return (<Image source={main} style={{width:22, height:23}}/>)
-       break;
-       case "twasol":
-       return (<Image source={Twasol} style={{width:22, height:23}}/>)
-       break;
-       case "_gallery":
-       return (<Image source={gallery} style={{width:22, height:23}}/>)
-       break;
-       case "_HQ":
-       return (<Image source={HQ} style={{width:22, height:23}}/>)
-       break;
-       default :
-       return (<Text>Error</Text>) ;
-   }
-    
+   
+    return (<Image source={props.select ?props.iconeName_selected : props.iconeName} style={{width:22,height:23}} />);
 };
 
 const Router_Component=()=>{
@@ -46,15 +33,14 @@ const Router_Component=()=>{
                 
              </Scene>    
              <Scene key="NewFeed">
-              <Tabs tabBarPosition='bottom' showLabel={false} showIcon={true} activeBackgroundColor="#155da3">
-               <Scene key='Profile'  component={Home} icon={IconComponent} name="profile"  hideNavBar />
-
-               <Scene key='Twasol'  component={Login} icon={IconComponent} name="twasol"  hideNavBar/>
-               <Scene key='Gallery' component={Home}  icon={IconComponent} name="_gallery"  hideNavBar/>
-               <Scene key='Hq'      component={Home}  icon={IconComponent} name="_HQ"  hideNavBar/>
-               <Scene key='main'    component={Home}  icon={IconComponent} name="main"  hideNavBar/>
+              <Tabs tabBarPosition='bottom' showLabel={false} showIcon={true}  >
+               <Scene key='profile'  component={Home} icon={IconComponent} iconeName={profile} iconeName_selected={profile_selected} select={false}  hideNavBar />
+               <Scene key='Twasol'  component={Login} icon={IconComponent} iconeName={tawasol} iconeName_selected={tawasol_selectd}  select={false}  hideNavBar/>
+               <Scene key='Gallery' component={Home}  icon={IconComponent} iconeName={gallery} iconeName_selected={gallery_selected} select={false}  hideNavBar/>
+               <Scene key='Hq'      component={Home}  icon={IconComponent} iconeName={hq}      iconeName_selected={hq_selected}      select={false}  hideNavBar/>
+               <Scene key='main'    component={Home}  icon={IconComponent} iconeName={main}    iconeName_selected={main_selected}    select={true}  hideNavBar/> 
              </Tabs>
-             {/* <Scene key="Home" component={Home} hideNavBar  type='rest'/> */}
+            
              </Scene>
             </Scene>
         </Router>

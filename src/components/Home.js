@@ -6,7 +6,7 @@ export default class Home extends React.Component{
     render(){
         return(
             <View>
-                <Header headerTitle=""/>
+                <Header headerTitle="header"/>
             </View>
         );
     }
