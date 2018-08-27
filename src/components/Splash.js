@@ -15,7 +15,8 @@ export default class SplashScreen extends React.Component {
     }
     onTimeChange()
     {
-        return (Actions.auth());
+        //return (Actions.auth());
+        return (Actions.NewFeed());
     }
 
     render() {

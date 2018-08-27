@@ -5,7 +5,7 @@ import {style} from './style';
 
 const Header =(props)=>(
             <View style={style.headerStyle}>
-                <Text style={style.headerTextStyle}>{props.headerTitle}</Text>
+                <Image source={props.headerTitle} style={style.headerImage} />
             </View>
         );
     

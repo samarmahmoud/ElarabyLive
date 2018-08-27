@@ -1,23 +1,33 @@
 
+import { Platform } from 'react-native';
+
 const style = {
     headerStyle: {
         backgroundColor: '#105291',
         paddingTop: 20,
         height: 80,
-        justifyContent: 'flex-end',
         alignItems: 'flex-end',
-        shadowColor: '#3d000000',
-        shadowOffset: { width: 4, height: 0 },
-        shadowOpacity: 0.5,
-        elevation: 3,
+        justifyContent: 'center',
+       ...Platform.select({
+            ios:{
+                shadowColor: '#3d0000',
+                shadowRadius: 5,
+                shadowOffset: { width: 4, height: 4 },
+                shadowOpacity: 0.3,
+            },
+            android:{
+                elevation: 3,
+                position:'relative',
+            }
+
+        }),
       
     },
-    headerTextStyle: {
-        fontSize: 20,
-        color: '#ffffff',
-        lineHeight:24,
-        textAlign:'right',
-        fontWeight:'bold',
+    headerImage: {
+        width:140,
+        height:18,
+        marginRight:18,
+
 
     },
     container: {
@@ -65,8 +75,8 @@ const style = {
     },
     InputView:{
        marginTop:12,
-      
-      
+      width:'100%',
+      alignItems:'center'
     },
     InputeCont:{
         marginTop:59,
@@ -99,24 +109,27 @@ const style = {
         position: 'relative',
     },
  
-    TextStyle: {
-        width: 315,
-        height: 49,
+    TextStyle: {    
+        width: '91%',
+        marginLeft:4,
+        marginRight:4,
         paddingRight: 19,
+        paddingBottom:12,
+        paddingTop:12,
         borderColor: '#277ed1',
         textAlign: 'right',
-        backgroundColor:'rgba(200,195,199,0.4)'
+        backgroundColor:'rgba(200,195,199,0.4)',
+        borderRadius:2,
        
 
     },
     ButtonStyle: {
-       width:315,
-       height:53,
+       width:'90%',
         backgroundColor: '#e73f17',
         borderRadius: 2,
         borderWidth: 1,
         borderColor: '#e73f17',
-       
+      
 
 
     },
@@ -134,6 +147,7 @@ const style = {
         marginTop:25,
         justifyContent: 'center',
         alignItems:'center',
+
     },
     ForgetPasswordCont:{
         marginTop:30,
