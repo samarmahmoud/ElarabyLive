@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Image,TouchableOpacity,Text,Platform,FlatList} from 'react-native';
+import {View,Image,TouchableOpacity,Text,Platform,FlatList,I18nManager} from 'react-native';
 import axios from 'axios';
 import {Header,Card,CardItems} from './common';
 import logo from '../assets/elaraby_live_icon_big.png';
@@ -16,17 +16,23 @@ export default class Home extends React.Component{
       }
       renderList()
       {
-          return(this.state.posts.map(post=><Card key={post.title}>
-              <CardItems>
+        return(
+            <FlatList horizontal 
+              data={this.state.posts}
+             renderItem={({ item: rowData }) => { return(this.state.posts.map(rowData=><Card key={rowData.title}>
+                <CardItems >
                 <View style={styles.Container}>
-                  <Image  style={{width:272,height:139}}
-                   source={{uri:post.thumbnail_image}} />
+                 <Image  style={{width:272,height:139}}
+                  source={{uri:rowData.thumbnail_image}} />
                 </View>
                 <View>
-                  <Text >{ post.title }</Text>
+                  <Text >{ rowData.title }</Text>
                 </View>
-              </CardItems>
-          </Card>));
+             </CardItems>
+          </Card>));}}
+           keyExtractor={(item, index) => index}
+        />);
+        
       }
     render(){
         return(
@@ -34,12 +40,7 @@ export default class Home extends React.Component{
               <Header headerTitle={logo}/> 
             
               <View style={styles.Container}>
-               <FlatList horizontal
-                  renderItem={({ item: rowData }) => {this.renderList()}}
-                  keyExtractor={(item, index) => index}
-               />
-                 <Image  style={{width:272,height:139}}
-                   source={{uri:this.state.posts.thumbnail_image}} />
+              {this.renderList()} 
             </View>
                     <View style={styles.Container} >
                     <TouchableOpacity style={styles.FloatingButtonStyle} >
