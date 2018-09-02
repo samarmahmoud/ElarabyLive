@@ -36,7 +36,7 @@ const AthData={
           <Image source={Logo} style={{width:195,height:25}}/>
          </View>
          <View style={style.Login_Text}>
-             <Text style={style.headerTextStyle}>تسجيل الدخول</Text>
+             <Text style={style.text_TitleStyle}>تسجيل الدخول</Text>
          </View>
             <View style={style.InputeCont}>
             <View style={style.InputView}>

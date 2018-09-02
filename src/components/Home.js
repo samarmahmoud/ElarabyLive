@@ -3,7 +3,7 @@ import {View,Image,TouchableOpacity,Text,Platform,FlatList,I18nManager} from 're
 import axios from 'axios';
 import {Header,Card,CardItems} from './common';
 import logo from '../assets/elaraby_live_icon_big.png';
-import addPostImg from '../assets/add_post.png';
+
 
 
 
@@ -17,9 +17,9 @@ export default class Home extends React.Component{
       renderList()
       {
         return(
-            <FlatList horizontal 
+            <FlatList horizontal   inverted
               data={this.state.posts}
-             renderItem={({ item: rowData }) => { return(this.state.posts.map(rowData=><Card key={rowData.title}>
+             renderItem={({ item: rowData }) => { return(this.state.posts.map(rowData=><Card >
                 <CardItems >
                 <View style={styles.Container}>
                  <Image  style={{width:272,height:139}}

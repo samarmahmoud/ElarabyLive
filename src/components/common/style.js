@@ -30,6 +30,11 @@ const style = {
 
 
     },
+    text_TitleStyle:{
+        color: '#fff',
+        fontSize:20,
+        
+    },
     container: {
        flex:1,
         alignItems: 'center',
