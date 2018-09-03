@@ -93,7 +93,6 @@ const style = {
         borderWidth: 1,
         borderRadius: 2,
         borderColor: '#ddd',
-        borderBottomWidth: 0,
         shadowColor: '#000000',
         shadowOffset: { width: 0, height: 5 },
         shadowOpacity: 0.2,
@@ -102,16 +101,19 @@ const style = {
         marginLeft: 5,
         marginRight: 5,
         marginTop: 10,
+
  
     },
     ContainerCardItemStyle: {
-
+          width:272,
+         // height:300,
         padding: 3,
         backgroundColor: '#fff',
         justifyContent: 'flex-start',
-        flexDirection: 'row',
         borderColor: '#ddd',
         position: 'relative',
+        flexWrap:'wrap'
+        
     },
  
     TextStyle: {    
