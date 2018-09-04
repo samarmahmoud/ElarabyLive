@@ -1,6 +1,9 @@
 import React from 'react';
 import {View,Text,FlatList,Image} from 'react-native';
-import {Card,CardItems} from './common';
+import {Card,CardItems,style} from './common';
+import timeIcon from '../assets/ion_android_time_ionicons.png';
+import unlike from '../assets/like_icon.png';
+import comments from '../assets/comments.png';
 
 const data={posts:[{
     "userId": 1,
@@ -41,67 +44,44 @@ const data={posts:[{
    ]}
  const Section =(props)=>(
     
-           <View style={styles.SectionContainer}> 
-              <View style={styles.headerSection}>
-                  <Text style={styles.SectionTitle}>{props.title}</Text>
-                  <Text style={styles.ShowAll}>عرض الكل</Text>
+           <View style={style.SectionContainer}> 
+              <View style={style.headerSection}>
+                  <Text style={style.SectionTitle}>{props.title}</Text>
+                  <Text style={style.ShowAll}>عرض الكل</Text>
               </View>
               <View>
                <FlatList horizontal   inverted
                  data={data.posts}
-                 renderItem={({ item:rowData }) => { return(data.posts.map(rowData=><Card key={rowData.id}  >
+                 renderItem={({ item:rowData }) => {return(<Card key={data.posts.id}  >
                 <CardItems key={rowData.id}>
                 <View>
                  <Image  style={{width:272,height:139}}
                   source={{uri:rowData.image}} />
                 </View>
 
-                <View >
+                <View style={{paddingRight:10,paddingTop:10}} >
                   <Text >{rowData.title }</Text>
                 </View>
+                <View style={style.timeContainer}>
+                 <Image source={timeIcon} style={{width:10,height:10}}></Image>
+                 <Text style={style.timeText}>منذ ١ ساعة</Text>
+               </View>
+               <View style={style.LikesCommentsContainer}>
+                 <View style={style.timeContainer}>
+                   <Image source={unlike} style={{width:28,height:28}}></Image>
+                   <Text style={style.LikeCoutText}>٣.٧ ألف</Text>
+                 </View>
+                 <View style={style.commentContainer}>
+                   <Image source={comments} style={{width:28,height:28}}></Image>
+                   <Text style={style.LikeCoutText}>٣.٧ ألف</Text>
+                 </View>
+               </View>
              </CardItems>
-             </Card>));}}
+             </Card>);}}
                 keyExtractor={(item, index) => index} />
                </View>
-           </View>  
+               
+           </View>     
      
  );
  export {Section};
-
- const styles={
-     Container:{
-         flex:1,
-     },
-      SectionContainer:{
-         
-           backgroundColor:'#ffffff',
-
-        },
-        headerSection:{
-            flexDirection:'row-reverse',
-            justifyContent :'space-between',
-            padding:5
-
-        },
-      SectionTitle:{
-        color: '#000',
-        fontSize:21,
-        lineHeight:24,
-        fontWeight:'900',
-        padding:14,
-       
-      },
-      ShowAll:{
-        color: '#e73f17',
-        fontSize:15,
-        lineHeight:24,
-        paddingLeft:20,
-        fontWeight:'300',
-        paddingTop:14
-        
-      },
-      postText:{
-
-      }
-
- };  

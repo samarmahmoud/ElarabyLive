@@ -92,24 +92,16 @@ const style = {
     ContainerStyle: {
         borderWidth: 1,
         borderRadius: 2,
-        borderColor: '#ddd',
-        shadowColor: '#000000',
-        shadowOffset: { width: 0, height: 5 },
-        shadowOpacity: 0.2,
-        shadowRadius: 2,
-        elevation: 3,
+        borderColor: '#d8d8d8',
         marginLeft: 5,
         marginRight: 5,
-        marginTop: 10,
-
- 
+        
     },
     ContainerCardItemStyle: {
-          width:272,
-         // height:300,
-        padding: 3,
+        width:272,
+        paddingBottom: 15,
+       // marginRight:4,
         backgroundColor: '#fff',
-        justifyContent: 'flex-start',
         borderColor: '#ddd',
         position: 'relative',
         flexWrap:'wrap'
@@ -170,6 +162,63 @@ const style = {
     },
 
 
+    SectionContainer:{
+         
+        backgroundColor:'#ffffff',
+
+     },
+     headerSection:{
+         flexDirection:'row-reverse',
+         justifyContent :'space-between',
+         padding:5
+
+     },
+   SectionTitle:{
+     color: '#000',
+     fontSize:21,
+     lineHeight:24,
+     fontWeight:'900',
+     padding:14,
+    
+   },
+   ShowAll:{
+     color: '#e73f17',
+     fontSize:15,
+     lineHeight:24,
+     paddingLeft:20,
+     fontWeight:'300',
+     paddingTop:14
+     
+   },
+   
+   timeContainer:{
+     flexDirection:'row-reverse',
+     alignItems:'center',
+      paddingLeft:10,
+    },
+
+    timeText:{
+      color:'#9b9b9b',
+      fontSize:10,
+      lineHeight:19,
+      paddingRight:3
+    },
+    LikeCoutText:{
+     color:'#9b9b9b',
+     fontSize:12,
+     lineHeight:19,
+     paddingRight:3
+   },
+    LikesCommentsContainer:{
+     flexDirection:'row-reverse',
+    
+    },
+    commentContainer:{
+      marginStart:20,
+      flexDirection:'row-reverse',
+     alignItems:'center',
+     justifyContent:'flex-start',
+    },
 
 
 }

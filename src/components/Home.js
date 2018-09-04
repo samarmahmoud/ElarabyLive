@@ -1,9 +1,9 @@
 import React from 'react';
-import {View,Image,TouchableOpacity,Text,Platform,FlatList,I18nManager} from 'react-native';
+import {View,Image,TouchableOpacity,Text,Platform,ScrollView} from 'react-native';
 import axios from 'axios';
-import {Header,Card,CardItems} from './common';
+import {Header} from './common';
 import logo from '../assets/elaraby_live_icon_big.png';
-
+import {Section} from './Section';
 
 
 
@@ -14,34 +14,18 @@ export default class Home extends React.Component{
         axios.get('https://rallycoding.herokuapp.com/api/music_albums')
         .then(response=>this.setState({posts:response.data}));
       }
-      renderList()
-      {
-        return(
-            <FlatList horizontal   inverted
-              data={this.state.posts}
-             renderItem={({ item: rowData }) => { return(this.state.posts.map(rowData=><Card >
-                <CardItems >
-                <View style={styles.Container}>
-                 <Image  style={{width:272,height:139}}
-                  source={{uri:rowData.thumbnail_image}} />
-                </View>
-                <View>
-                  <Text >{ rowData.title }</Text>
-                </View>
-             </CardItems>
-          </Card>));}}
-           keyExtractor={(item, index) => index}
-        />);
-        
-      }
+      
     render(){
         return(
             <View style={{flex:1}}>
               <Header headerTitle={logo}/> 
             
-              <View style={styles.Container}>
-              {this.renderList()} 
-            </View>
+              {/* <View style={styles.Container}> */}
+              <ScrollView>
+              <Section title={'اهم الاخبار'}/>
+              <Section title={'مشاركات الاعضاء'}/>
+              </ScrollView>
+            {/* </View> */}
                     <View style={styles.Container} >
                     <TouchableOpacity style={styles.FloatingButtonStyle} >
                         <Text style={styles.textStyle}>+</Text>
