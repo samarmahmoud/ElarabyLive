@@ -161,12 +161,6 @@ const style = {
 
     },
 
-
-    SectionContainer:{
-         
-        backgroundColor:'#ffffff',
-
-     },
      headerSection:{
          flexDirection:'row-reverse',
          justifyContent :'space-between',
@@ -185,10 +179,9 @@ const style = {
      color: '#e73f17',
      fontSize:15,
      lineHeight:24,
-     paddingLeft:20,
+     paddingLeft:5,
      fontWeight:'300',
-     paddingTop:14
-     
+    
    },
    
    timeContainer:{

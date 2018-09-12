@@ -1,9 +1,11 @@
 import React from 'react';
 import {View,Text,FlatList,Image} from 'react-native';
-import {Card,CardItems,style} from './common';
-import timeIcon from '../assets/ion_android_time_ionicons.png';
-import unlike from '../assets/like_icon.png';
-import comments from '../assets/comments.png';
+import {Card} from './Card';
+import {CardItems} from './CardItems';
+import {style} from './style';
+import {LikeSection} from './LikesAndCommentCounters';
+import timeIcon from '../../assets/ion_android_time_ionicons.png';
+import {RoundImage} from './RoundImage';
 
 const data={posts:[{
     "userId": 1,
@@ -42,46 +44,38 @@ const data={posts:[{
     
   },
    ]}
- const Section =(props)=>(
-    
-           <View style={style.SectionContainer}> 
-              <View style={style.headerSection}>
-                  <Text style={style.SectionTitle}>{props.title}</Text>
-                  <Text style={style.ShowAll}>عرض الكل</Text>
-              </View>
+ const MemberSharedSection =()=>(
+             
               <View>
+               
                <FlatList horizontal   inverted
                  data={data.posts}
                  renderItem={({ item:rowData }) => {return(<Card key={data.posts.id}  >
                 <CardItems key={rowData.id}>
-                <View>
-                 <Image  style={{width:272,height:139}}
-                  source={{uri:rowData.image}} />
+                <View style={{flexDirection:'row-reverse',padding:5}}>
+                  <RoundImage/>
+                  <View style={{flexDirection:'column-reverse'}}>
+                 
+                   <View style={style.timeContainer}>
+                     <Image source={timeIcon} style={{width:10,height:10}}></Image>
+                    <Text style={style.timeText}>منذ ١ ساعة</Text>
+                   </View>
+                   <View style={{paddingRight:10}} >
+                    <Text >هشام مهدى</Text>
+                   </View>
+                 </View>
                 </View>
-
+ 
                 <View style={{paddingRight:10,paddingTop:10}} >
                   <Text >{rowData.title }</Text>
                 </View>
-                <View style={style.timeContainer}>
-                 <Image source={timeIcon} style={{width:10,height:10}}></Image>
-                 <Text style={style.timeText}>منذ ١ ساعة</Text>
-               </View>
-               <View style={style.LikesCommentsContainer}>
-                 <View style={style.timeContainer}>
-                   <Image source={unlike} style={{width:28,height:28}}></Image>
-                   <Text style={style.LikeCoutText}>٣.٧ ألف</Text>
-                 </View>
-                 <View style={style.commentContainer}>
-                   <Image source={comments} style={{width:28,height:28}}></Image>
-                   <Text style={style.LikeCoutText}>٣.٧ ألف</Text>
-                 </View>
-               </View>
+                
+               <LikeSection LikeCount={'٣.٧ ألف'} CommentsCount={'٣.٧'}/>
+                
              </CardItems>
              </Card>);}}
                 keyExtractor={(item, index) => index} />
-               </View>
-               
-           </View>     
+               </View> 
      
  );
- export {Section};
+ export {MemberSharedSection};

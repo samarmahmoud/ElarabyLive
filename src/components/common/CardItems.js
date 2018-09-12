@@ -6,7 +6,7 @@ const CardItems =(props)=>
 {
   return(
 <View style={style.ContainerCardItemStyle}>
-{props.children}
+   {props.children}
 </View>
   );
 };

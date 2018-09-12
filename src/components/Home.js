@@ -1,11 +1,9 @@
 import React from 'react';
 import {View,Image,TouchableOpacity,Text,Platform,ScrollView} from 'react-native';
 import axios from 'axios';
-import {Header} from './common';
+import {Header,NewFeedSection,SectionHeader,MemberSharedSection} from './common';
 import logo from '../assets/elaraby_live_icon_big.png';
-import {Section} from './Section';
-
-
+ 
 
 export default class Home extends React.Component{
     state ={posts:[]}
@@ -17,15 +15,19 @@ export default class Home extends React.Component{
       
     render(){
         return(
-            <View style={{flex:1}}>
+            <View style={{flex:1,backgroundColor:'#ffffff'}}>
               <Header headerTitle={logo}/> 
-            
-              {/* <View style={styles.Container}> */}
               <ScrollView>
-              <Section title={'اهم الاخبار'}/>
-              <Section title={'مشاركات الاعضاء'}/>
+                 
+                    <SectionHeader  title={'اهم الاخبار'} ShowAllTitle={'عرض الكل'} />
+                    <NewFeedSection/>
+                 
+                    <SectionHeader  title={'مشاركات الاعضاء'} ShowAllTitle={'عرض الكل'} />
+                    <MemberSharedSection/>
+
+                    <SectionHeader  title={'مجلة العربي'} ShowAllTitle={'الاصدارات السابقة'} />
               </ScrollView>
-            {/* </View> */}
+           
                     <View style={styles.Container} >
                     <TouchableOpacity style={styles.FloatingButtonStyle} >
                         <Text style={styles.textStyle}>+</Text>
