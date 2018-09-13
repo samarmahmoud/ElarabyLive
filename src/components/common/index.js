@@ -9,3 +9,4 @@ export * from './SectionHeader';
 export * from './LikesAndCommentCounters';
 export * from './RoundImage';
 export * from './MemberSharedSection';
+export * from './imageButton';

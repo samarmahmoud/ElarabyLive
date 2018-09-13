@@ -64,11 +64,12 @@ const data={posts:[{
                  <Image source={timeIcon} style={{width:10,height:10}}></Image>
                  <Text style={style.timeText}>منذ ١ ساعة</Text>
                </View>
+               <View style={style.LikesCommentsContainer}>
                <LikeSection LikeCount={'٣.٧ ألف'} CommentsCount={'٣.٧'}/>
-                
+               </View>
              </CardItems>
              </Card>);}}
-                keyExtractor={(item, index) => index} />
+                keyExtractor={(item, index) => index.toString()} />
                </View> 
      
  );

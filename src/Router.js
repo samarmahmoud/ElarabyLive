@@ -34,7 +34,7 @@ const Router_Component=()=>{
                 
              </Scene>    
              <Scene key="NewFeed">
-              <Tabs tabBarPosition='bottom' showLabel={false} showIcon={true}  >
+              <Tabs tabBarPosition='bottom' showLabel={false}  swipeEnabled={false} >
                <Scene key='profile'  component={Home} icon={IconComponent} iconeName={profile} iconeName_selected={profile_selected} width={22} height={23} select={false}  hideNavBar />
                <Scene key='Twasol'  component={Login} icon={IconComponent} iconeName={tawasol} iconeName_selected={tawasol_selectd}  width={25} height={24} select={false}  hideNavBar/>
                <Scene key='Gallery' component={Home}  icon={IconComponent} iconeName={gallery} iconeName_selected={gallery_selected} width={25} height={25} select={false}  hideNavBar/>

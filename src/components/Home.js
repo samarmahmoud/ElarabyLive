@@ -21,10 +21,10 @@ export default class Home extends React.Component{
                  
                     <SectionHeader  title={'اهم الاخبار'} ShowAllTitle={'عرض الكل'} />
                     <NewFeedSection/>
-                 
+                   <View style={{borderBottomColor: '#eaeaea', borderBottomWidth: 1,marginTop:25}}></View>
                     <SectionHeader  title={'مشاركات الاعضاء'} ShowAllTitle={'عرض الكل'} />
                     <MemberSharedSection/>
-
+                    <View style={{borderBottomColor: '#eaeaea', borderBottomWidth: 1,marginTop:25}}></View>
                     <SectionHeader  title={'مجلة العربي'} ShowAllTitle={'الاصدارات السابقة'} />
               </ScrollView>
            

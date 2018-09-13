@@ -21,8 +21,8 @@ onpressLike=()=>{
 
 const LikeSection=(props)=>(
 
-          <View style={style.LikesCommentsContainer}>
-                 <View style={style.timeContainer}>
+         <View style={{ flexDirection:'row-reverse'}}>
+                 <View style={{ flexDirection:'row-reverse', alignItems:'center'}}>
                  <TouchableOpacity onPress={onpressLike.bind(this)} >
                    <Image source={unlike} style={styles.likeIcon}></Image>
                  </TouchableOpacity>
@@ -34,7 +34,7 @@ const LikeSection=(props)=>(
                    </TouchableOpacity>
                    <Text style={style.LikeCoutText}>{props.CommentsCount}</Text>
                  </View>
-         </View>
+                 </View>
 );
 
 export {LikeSection};

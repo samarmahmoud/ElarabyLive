@@ -3,11 +3,13 @@ import { Platform } from 'react-native';
 
 const style = {
     headerStyle: {
+        width:'100%',
         backgroundColor: '#105291',
         paddingTop: 20,
         height: 80,
-        alignItems: 'flex-end',
-        justifyContent: 'center',
+         alignItems: 'center',
+         justifyContent: 'space-between',
+        flexDirection:'row-reverse',
        ...Platform.select({
             ios:{
                 shadowColor: '#3d0000',
@@ -204,6 +206,7 @@ const style = {
    },
     LikesCommentsContainer:{
      flexDirection:'row-reverse',
+     paddingLeft:10,
     
     },
     commentContainer:{

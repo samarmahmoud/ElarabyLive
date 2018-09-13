@@ -10,7 +10,7 @@ import {RoundImage} from './RoundImage';
 const data={posts:[{
     "userId": 1,
     "id": 1,
-    "title": "مجموعة العربي تحصل على شهادة الجودة في مجال سلامة الغذاء",
+    "title": "قرية الأحلام بالساحل الشمالي تستقبل الفوج الأول من مصيف الموظفين …",
     "image":"https://i.imgur.com/K3KJ3w4h.jpg",
     
   },
@@ -52,7 +52,7 @@ const data={posts:[{
                  data={data.posts}
                  renderItem={({ item:rowData }) => {return(<Card key={data.posts.id}  >
                 <CardItems key={rowData.id}>
-                <View style={{flexDirection:'row-reverse',padding:5}}>
+                <View style={{flexDirection:'row-reverse',paddingTop:5,paddingStart:10}}>
                   <RoundImage/>
                   <View style={{flexDirection:'column-reverse'}}>
                  
@@ -65,16 +65,16 @@ const data={posts:[{
                    </View>
                  </View>
                 </View>
- 
-                <View style={{paddingRight:10,paddingTop:10}} >
+                <View style={{marginRight:60}} >
+                <View style={{paddingTop:5}} >
                   <Text >{rowData.title }</Text>
                 </View>
                 
-               <LikeSection LikeCount={'٣.٧ ألف'} CommentsCount={'٣.٧'}/>
-                
+               <LikeSection LikeCount={'٣.٧'} CommentsCount={'٣.٧'}/>
+                </View>
              </CardItems>
              </Card>);}}
-                keyExtractor={(item, index) => index} />
+                keyExtractor={(item, index) => index.toString()} />
                </View> 
      
  );
